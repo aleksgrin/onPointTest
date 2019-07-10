@@ -1,0 +1,203 @@
+// НЕ ЗАБЫТЬ ЗАДАТЬ МАКСИМАЛЬНЫЕ И МИНИМАЛЬНЫЕ ШИРИНЫ (ПРОВЕРИТЬ НА ПЕРЕПОЛНЕНИЕ)
+.pathogenesis-elements {
+  height: 100vh;
+}
+
+.pathogenesis-elements__wrapper {
+  width: 1024px;
+  margin: 0 auto;
+  padding-top: 94px;
+  position: relative;
+}
+
+.pathogenesis-elements__header {
+  font-family: "Gotham Pro", sans-serif;
+  font-weight: 400;
+  font-size: 29px;
+  margin-left: 85px;
+  margin-top: 20px;
+}
+
+.pathogenesis-elements__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pathogenesis-elements__number {
+  &--inline {
+    display: inline;
+    margin-right: 10px;
+  }
+  font-size: 32px;
+  display: block;
+}
+
+.pathogenesis-before-element {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.pathogenesis-elements__item {
+  &--beta {
+    &::before {
+      .pathogenesis-before-element();
+      left: 40px;
+      top: 37px;
+      width: 81px;
+      height: 81px;
+      background-color: #444793;
+    }
+    left: 445px;
+    top: 145px;
+    font-size: 24px;
+  }
+  &--bowel {
+    &::before {
+      .pathogenesis-before-element();
+      right: 5px;
+      top: 10px;
+      background-color: #424589;
+    }
+    left: 110px;
+    top: 225px;
+    text-align: right;
+    padding-right: 80px;
+    width: 230px;
+  }
+  &--infection {
+    &::before {
+      .pathogenesis-before-element();
+      right: 7px;
+      top: 12px;
+      background-color: #3d4279;
+    }
+    left: 40px;
+    top: 315px;
+    text-align: right;
+    padding-right: 80px;
+    width: 300px;
+  }
+  &--stomach {
+    &::before {
+      .pathogenesis-before-element();
+      right: 7px;
+      bottom: -12px;
+      background-color: #373e62;
+    }
+    left: 110px;
+    top: 415px;
+    text-align: right;
+    padding-right: 80px;
+    width: 230px;
+  }
+  &--kidney {
+    &::before {
+      .pathogenesis-before-element();
+      right: 10px;
+      bottom: 5px;
+      background-color: #394058;
+    }
+    left: 318px;
+    top: 560px;
+    text-align: right;
+    padding-right: 80px;
+    width: 250px;
+  }
+  &--brain {
+    &::before {
+      .pathogenesis-before-element();
+      left: 0;
+      bottom: 0;
+      background-color: #43468d;
+    }
+    right: 60px;
+    top: 230px;
+    text-align: left;
+    padding-left: 80px;
+    width: 250px;
+  }
+  &--glikemia {
+    left: 430px;
+    top: 491px;
+    font-size: 25px;
+  }
+  &--incretin {
+    left: 310px;
+    top: 340px;
+    width: 200px;
+    text-align: right;
+  }
+  &--alpha {
+    left: 540px;
+    top: 340px;
+    width: 200px;
+    text-align: left;
+  }
+  &--insulin {
+    background-image: linear-gradient(#2b306f, #030d23);
+    border-radius: 45px;
+    right: 60px;
+    top: 335px;
+    text-align: left;
+    width: 260px;
+  }
+  position: absolute;
+  font-size: 20px;
+}
+
+.pathogenesis-elements__item-alpha-paragraph {
+  margin-top: 0;
+  margin-bottom: 31px;
+}
+
+.pathogenesis-elements__inner-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-left: 5px;
+}
+
+.pathogenesis-elements__inner-item {
+  &--capa::before {
+    .pathogenesis-before-element();
+    left: 10px;
+    bottom: 0;
+    background-color: #4c5179;
+  }
+  &--muscle::before {
+    .pathogenesis-before-element();
+    left: 10px;
+    bottom: 0;
+    background-color: #42476a;
+  }
+  &--lipid::before {
+    .pathogenesis-before-element();
+    left: 10px;
+    bottom: 0;
+    background-color: #343b55;
+  }
+  padding-left: 80px;
+  margin-bottom: 23px;
+  position: relative;
+}
+
+.pathogenesis-elements__item-header {
+  font-size: 16px;
+  text-align: center;
+}
+
+.pathogenesis-elements__between {
+  &--amnelin {
+    position: relative;
+    left: 75px;
+    top: -15px;
+  }
+  &--alpha {
+    margin-left: 5px;
+  }
+  font-size: 13px;
+}

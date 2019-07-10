@@ -1,0 +1,62 @@
+.scroll-down {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.scroll-down__text {
+  &::before {
+    content: "";
+    display: block;
+    position: fixed;
+    z-index: 5;
+    left: 50%;
+    bottom: 14px;
+    width: 30px;
+    height: 30px;
+    transform: rotate(45deg) translateX(-50%);
+    border: 2px solid #ffffff;
+    border-top-color: transparent;
+    border-left-color: transparent;
+  }
+  position: relative;
+  font-size: 15px;
+  padding-bottom: 40px;
+}
+
+.scroll-down::before {
+  content: "";
+  display: block;
+  width: 400px;
+  height: 100px;
+  position: absolute;
+  bottom: -81px;
+  background-color: rgb(247, 139, 31);
+  border-radius: 50%;
+  box-shadow: 0 0 22px 21px rgb(247, 139, 31);
+}
+
+.scroll-down::after {
+  content: "";
+  display: block;
+  width: 850px;
+  height: 100px;
+  position: absolute;
+  bottom: -100px;
+  background-color: rgb(247, 139, 31);
+  border-radius: 50%;
+  box-shadow: 0 0 10px 22px rgb(247, 139, 31);
+}
+
+.Rectangle_5 {
+  background-color: rgb(247, 139, 31);
+  position: absolute;
+  left: 107px;
+  top: 1465px;
+  width: 1774px;
+  height: 248px;
+  z-index: 245;
+}
+
