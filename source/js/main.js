@@ -61,9 +61,7 @@ function previousItem() {
   var currentSlide = sliderArray[currentSlideNumber];
   console.log(currentSlideNumber);
   currentSlide.classList.remove("down-scroll");
-  // if (currentSlideNumber !== 0) {
-    currentSlide.classList.add("up-scroll");
-  // }
+  currentSlide.classList.add("up-scroll");
 }
 
 var mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
