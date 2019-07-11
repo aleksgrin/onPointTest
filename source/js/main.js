@@ -43,6 +43,7 @@ function nextItem() {
   }
   paginationItems[currentSlideNumber].classList.add('pagination__item--active');
   var previousSlide = sliderArray[currentSlideNumber - 1];
+  previousSlide.classList.remove("up-scroll");
   previousSlide.classList.add("down-scroll");
 }
 
@@ -58,7 +59,11 @@ function previousItem() {
   }
   paginationItems[currentSlideNumber].classList.add('pagination__item--active');
   var currentSlide = sliderArray[currentSlideNumber];
+  console.log(currentSlideNumber);
   currentSlide.classList.remove("down-scroll");
+  // if (currentSlideNumber !== 0) {
+    currentSlide.classList.add("up-scroll");
+  // }
 }
 
 var mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
