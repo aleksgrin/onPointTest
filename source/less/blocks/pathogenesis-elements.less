@@ -8,8 +8,8 @@
 }
 
 .pathogenesis-elements__wrapper {
+  .wrapper();
   padding-top: 94px;
-  position: relative;
 }
 
 .pathogenesis-elements__header {
@@ -53,6 +53,10 @@
       width: 81px;
       height: 81px;
       background-color: #444793;
+      background-image: url("../img/beta.png");
+      background-repeat: no-repeat;
+      background-size: 34px;
+      background-position: 23px 12px;
     }
     left: 445px;
     top: 145px;
@@ -64,9 +68,9 @@
       right: 5px;
       top: 10px;
       background-color: #424589;
-      // background-image: url("../img/bowel.png");
+      background-image: url("../img/bowel.png");
       background-repeat: no-repeat;
-      background-size: contain;
+      background-size: 41px;
       background-position: 5px 0;
     }
     left: 110px;
@@ -81,7 +85,7 @@
       right: 7px;
       top: 12px;
       background-color: #3d4279;
-      // background-image: url("../img/infection.png");
+      background-image: url("../img/infection.png");
       background-repeat: no-repeat;
       background-size: 50px;
       background-position: 5px 5px;
@@ -98,6 +102,10 @@
       right: 7px;
       bottom: -12px;
       background-color: #373e62;
+      background-image: url("../img/stomach.png");
+      background-repeat: no-repeat;
+      background-size: 45px;
+      background-position: 3px 4px;
     }
     left: 110px;
     top: 415px;
@@ -111,6 +119,10 @@
       right: 10px;
       bottom: 5px;
       background-color: #394058;
+      background-image: url("../img/kidney.png");
+      background-repeat: no-repeat;
+      background-size: 38px;
+      background-position: 9px 6px;
     }
     left: 318px;
     top: 560px;
@@ -124,8 +136,12 @@
       left: 0;
       bottom: 0;
       background-color: #43468d;
+      background-image: url("../img/brain.png");
+      background-repeat: no-repeat;
+      background-size: 45px;
+      background-position: 9px 10px;
     }
-    right: 60px;
+    left: 714px;
     top: 230px;
     text-align: left;
     padding-left: 80px;
@@ -151,7 +167,7 @@
   &--insulin {
     background-image: linear-gradient(#2b306f, #030d23);
     border-radius: 45px;
-    right: 60px;
+    left: 704px;
     top: 335px;
     text-align: left;
     width: 260px;
@@ -178,18 +194,31 @@
     left: 10px;
     bottom: 0;
     background-color: #4c5179;
+    background-image: url("../img/capa.png");
+    background-repeat: no-repeat;
+    background-size: 49px;
+    background-position: 6px 15px;
   }
   &--muscle::before {
     .pathogenesis-before-element();
     left: 10px;
     bottom: 0;
     background-color: #42476a;
+    background-image: url("../img/muscle.png");
+    background-repeat: no-repeat;
+    background-size: 70px;
+    background-position: 0 13px;
+    transform: rotate(-30deg);
   }
   &--lipid::before {
     .pathogenesis-before-element();
     left: 10px;
     bottom: 0;
     background-color: #343b55;
+    background-image: url("../img/lipid.png");
+    background-repeat: no-repeat;
+    background-size: 49px;
+    background-position: 6px 6px;
   }
   padding-left: 80px;
   margin-bottom: 23px;

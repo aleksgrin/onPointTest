@@ -1,0 +1,110 @@
+@angle-basic-8: 8deg;
+@angle-basic-30: 30deg;
+.arrow-mixin(@top, @left, @width, @angle) {
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 50;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-left: 9px solid #ffffff;
+    border-bottom: 4px solid transparent;
+  }
+  display: block;
+  position: absolute;
+  z-index: 50;
+  background-color: #fff;
+  width: @width;
+  height: 1px;
+  top: @top;
+  left: @left;
+  transform: rotate(@angle);
+}
+.arrow-w-113-dir-1-8 {
+  .arrow-mixin(235px, 346px, 113px, 180deg-@angle-basic-8);
+}
+
+.arrow-w-113-dir-8-1 {
+  .arrow-mixin(244px, 349px, 113px, -@angle-basic-8);
+}
+
+.arrow-w-113-dir-1-7 {
+  .arrow-mixin(235px, 591px, 113px, @angle-basic-8);
+}
+
+.arrow-w-113-dir-7-1 {
+  .arrow-mixin(244px, 588px, 113px, 180deg+@angle-basic-8);
+}
+
+.arrow-w-153-dir-1-9 {
+  .arrow-mixin(296px, 330px, 153px, 180deg-@angle-basic-30);
+}
+
+.arrow-w-153-dir-9-1 {
+  .arrow-mixin(303px, 335px, 153px, -@angle-basic-30);
+}
+
+.arrow-w-153-dir-1-6 {
+  .arrow-mixin(295px, 558px, 153px, @angle-basic-30);
+}
+
+.arrow-w-153-dir-6-1 {
+  .arrow-mixin(302px, 553px, 153px, 180deg+@angle-basic-30);
+}
+
+.arrow-w-230-dir-1-am {
+  .arrow-mixin(339px, 282px, 230px, 142deg);
+}
+
+.arrow-w-97-dir-am-gip {
+  .arrow-mixin(468px, 327px, 97px, 26deg);
+}
+
+.arrow-w-23-dir-9-10 {
+  .arrow-mixin(451px, 293px, 23px, 90deg);
+}
+
+.arrow-w-23-dir-gip-11 {
+  .arrow-mixin(537px, 526px, 23px, 90deg);
+}
+
+.arrow-w-23-dir-11-gip {
+  .arrow-mixin(537px, 503px, 23px, -90deg);
+}
+
+.arrow-w-23-dir-7-6 {
+  .arrow-mixin(307px, 784px, 23px, -90deg);
+}
+
+.arrow-w-23-dir-6-7 {
+  .arrow-mixin(307px, 795px, 23px, 90deg);
+}
+
+.arrow-w-70-dir-1-2 {
+  .arrow-mixin(305px, 467px, 70px, 90deg);
+}
+
+.arrow-w-70-dir-2-1 {
+  .arrow-mixin(305px, 514px, 70px, -90deg);
+}
+
+.arrow-w-60-dir-2-gip {
+  .arrow-mixin(456px, 473px, 60px, 90deg);
+}
+
+.arrow-w-30-dir-glu-gip {
+  .arrow-mixin(470px, 534px, 30px, 90deg);
+}
+
+.arrow-w-18-dir-3-glu {
+  .arrow-mixin(415px, 540px, 18px, 90deg);
+}
+
+.arrow-w-216-dir-1-gip {
+  .arrow-mixin(377px, 418px, 216px, 90deg);
+}
