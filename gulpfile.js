@@ -41,7 +41,7 @@ gulp.task("html", function () {
 });
 
 gulp.task("images", function() {
-  return gulp.src("source/img/**/*.{svg,jpg,png}")
+  return gulp.src("source/img/**/*.{jpg,png,svg}")
     .pipe(imagemin([
       imagemin.svgo(),
       imagemin.jpegtran({progressive: true}),
