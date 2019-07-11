@@ -1,31 +1,32 @@
 'use strict';
 
 (function () {
-  var ticking = false;
-  var isFirefox = (/Firefox/i.test(navigator.userAgent));
-  var isIe = (/MSIE/i.test(navigator.userAgent)) || (/Trident.*rv\:11\./i.test(navigator.userAgent));
-  var scrollSensitivitySetting = 30; 
-  var slideDurationSetting = 600;
-  var currentSlideNumber = 0;
+  var SCROLL_SENSIVITY = 30;
+  var SLIDE_WAIT = 600;
+
   var sliderArray = document.querySelectorAll(".slides-container__item");
   var paginationItems = document.querySelectorAll(".pagination__item");
-  var totalSlideNumber = sliderArray.length;
   var scrollDownElement = document.querySelector('.scroll-down');
+  
+  var ticking = false;
+  var currentSlideNumber = 0;
+  var totalSlideNumber = sliderArray.length;
+  var startTouchY = null;
+  var endTouchY = null;
 
-  function parallaxScroll(evt) {
-    var delta = evt.wheelDelta;
 
+  function showItem(delta) {
     if (!ticking) {
-      if (delta <= -scrollSensitivitySetting) {
+      if (delta <= -SCROLL_SENSIVITY) {
         ticking = true;
         nextItem();
-        slideDurationTimeout(slideDurationSetting);
+        slideDurationTimeout(SLIDE_WAIT);
       }
 
-      if (delta >= scrollSensitivitySetting) {
+      if (delta >= SCROLL_SENSIVITY) {
         ticking = true;
         previousItem();
-        slideDurationTimeout(slideDurationSetting);
+        slideDurationTimeout(SLIDE_WAIT);
       }
     }
   }
@@ -38,6 +39,8 @@
 
   function nextItem() {
     currentSlideNumber = (currentSlideNumber < totalSlideNumber - 1) ? ++currentSlideNumber : totalSlideNumber - 1;
+    var previousSlide = sliderArray[currentSlideNumber - 1];
+
     if (currentSlideNumber === totalSlideNumber - 1) {
       scrollDownElement.classList.add('scroll-down--hidden');
     }
@@ -45,52 +48,35 @@
       paginationItems[i].classList.remove('pagination__item--active')
     }
     paginationItems[currentSlideNumber].classList.add('pagination__item--active');
-    var previousSlide = sliderArray[currentSlideNumber - 1];
     previousSlide.classList.remove("up-scroll");
     previousSlide.classList.add("down-scroll");
   }
 
   function previousItem() {
     currentSlideNumber = (currentSlideNumber > 0) ? --currentSlideNumber : 0;
+    var currentSlide = sliderArray[currentSlideNumber];
+
     if (currentSlideNumber === totalSlideNumber - 2) {
-      if (scrollDownElement.classList.contains('scroll-down--hidden')) {
-        scrollDownElement.classList.remove('scroll-down--hidden');
-      }
+      scrollDownElement.classList.remove('scroll-down--hidden');
     }
     for (var i = 0; i < totalSlideNumber; i++) {
       paginationItems[i].classList.remove('pagination__item--active')
     }
     paginationItems[currentSlideNumber].classList.add('pagination__item--active');
-    var currentSlide = sliderArray[currentSlideNumber];
     currentSlide.classList.remove("down-scroll");
     currentSlide.classList.add("up-scroll");
-
   }
 
-  var mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
-  window.addEventListener(mousewheelEvent, parallaxScroll, false);
-
-  var start = null;
-  var end = null;
-  window.addEventListener('touchstart', function (evt) {
-    start = evt.changedTouches[0].clientY;
+  window.addEventListener('wheel', function (evt) {
+    var delta = evt.wheelDelta;
+    showItem(delta)
   });
-  window.addEventListener('touchend', function (evt) {
-    end = evt.changedTouches[0].clientY;
-    var delta = end-start;
 
-    if (!ticking) {
-      if (delta <= -scrollSensitivitySetting) {
-        ticking = true;
-        nextItem();
-        slideDurationTimeout(slideDurationSetting);
-      }
-
-      if (delta >= scrollSensitivitySetting) {
-        ticking = true;
-        previousItem();
-        slideDurationTimeout(slideDurationSetting);
-      }
-    }
+  window.addEventListener('touchstart', function (startEvt) {
+    startTouchY = startEvt.changedTouches[0].clientY;
+  });
+  window.addEventListener('touchend', function (endEvt) {
+    endTouchY = endEvt.changedTouches[0].clientY;
+    showItem(endTouchY - startTouchY);
   });
 })();
