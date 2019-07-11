@@ -1,17 +1,14 @@
 .therapy-aims {
-  height: 100vh;
   color: #0d319c;
 
   background-image: url("../img/background-1.jpg");
-  // background-size: 1024px auto;
-  background-size: contain;
+  background-size: cover;
   background-position: center 0;
   background-repeat: no-repeat;
-  // background-color: blue;
+  background-color: #68c1fe;
 }
 
 .therapy-aims__wrapper {
-  width: 1024px;
   margin: 0 auto;
   padding-top: 94px;
   position: relative;
@@ -81,35 +78,37 @@
   height: 15px;
   background-color: red;
   border-radius: 50%;
-  background-color: rgba(247, 139, 31, 0.22);
+  background-color: transparent;
   border: 1px solid #cf1437;
 }
 
-.Ellipse_2_copy_2 {
-  border-width: 2px;
-  border-style: solid;
-  border-radius: 50%;
-  background-image: -moz-radial-gradient( 50% 50%, circle closest-side, rgb(222,121,27) 1%, rgb(207,20,55) 100%);
-  background-image: -webkit-radial-gradient( 50% 50%, circle closest-side, rgb(222,121,27) 1%, rgb(207,20,55) 100%);
-  background-image: -ms-radial-gradient( 50% 50%, circle closest-side, rgb(222,121,27) 1%, rgb(207,20,55) 100%);
-  position: absolute;
-  left: 1135px;
-  top: 537px;
-  width: 79px;
-  height: 79px;
-  z-index: 14;
-}
-
-
-.Ellipse_2_copy {
-  border-width: 2px;
-  border-style: solid;
+.therapy-aims__pointer-inner {
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   background-color: rgba(247, 139, 31, 0.22);
+  border: 1px solid #cf1437;
   position: absolute;
-  left: 1124px;
-  top: 524px;
-  width: 103px;
-  height: 103px;
-  z-index: 13;
+  top: 0;
+  left: 0;
+
+  animation-name: bigger;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+.therapy-aims__pointer-inner--middle {
+  animation-delay: 0.5s;
+}
+.therapy-aims__pointer-inner--last {
+  animation-delay: 1s;
+}
+
+@keyframes bigger {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
